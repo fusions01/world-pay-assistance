@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* World Pay Assistance - Deep Navy + Royal Blue + Gold */
+    /* Light mode (used for public pages) */
+    --background: 0.96 0.005 240;
+    --foreground: 0.14 0.03 260;
+    --card: 1 0 0;
+    --card-foreground: 0.14 0.03 260;
+    --popover: 1 0 0;
+    --popover-foreground: 0.14 0.03 260;
+    --primary: 0.38 0.12 258;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.93 0.02 240;
+    --secondary-foreground: 0.25 0.06 258;
+    --muted: 0.93 0.015 240;
+    --muted-foreground: 0.50 0.03 258;
+    --accent: 0.75 0.12 85;
+    --accent-foreground: 0.14 0.04 55;
+    --destructive: 0.577 0.245 27;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.015 240;
+    --input: 0.88 0.015 240;
+    --ring: 0.38 0.12 258;
+
+    /* Chart colors */
+    --chart-1: 0.38 0.12 258;
+    --chart-2: 0.75 0.12 85;
+    --chart-3: 0.60 0.15 145;
+    --chart-4: 0.65 0.18 25;
+    --chart-5: 0.55 0.13 290;
+
+    /* Sidebar */
+    --sidebar: 0.14 0.04 260;
+    --sidebar-foreground: 0.93 0.015 240;
+    --sidebar-primary: 0.75 0.12 85;
+    --sidebar-primary-foreground: 0.14 0.04 55;
+    --sidebar-accent: 0.22 0.06 260;
+    --sidebar-accent-foreground: 0.93 0.015 240;
+    --sidebar-border: 0.22 0.06 260;
+    --sidebar-ring: 0.75 0.12 85;
+
+    /* Custom tokens */
+    --navy: 0.14 0.04 260;
+    --navy-mid: 0.22 0.065 258;
+    --navy-light: 0.30 0.08 258;
+    --royal-blue: 0.38 0.14 258;
+    --sky-accent: 0.58 0.12 240;
+    --gold: 0.75 0.12 85;
+    --gold-light: 0.85 0.10 88;
+    --gold-dark: 0.62 0.14 75;
+    --success: 0.60 0.15 145;
+    --warning: 0.72 0.15 70;
+    --danger: 0.577 0.245 27;
+  }
+
+  .dark {
+    --background: 0.12 0.035 260;
+    --foreground: 0.93 0.01 240;
+    --card: 0.17 0.045 260;
+    --card-foreground: 0.93 0.01 240;
+    --popover: 0.20 0.05 260;
+    --popover-foreground: 0.93 0.01 240;
+    --primary: 0.68 0.14 85;
+    --primary-foreground: 0.14 0.04 55;
+    --secondary: 0.22 0.055 260;
+    --secondary-foreground: 0.93 0.01 240;
+    --muted: 0.22 0.05 260;
+    --muted-foreground: 0.60 0.04 250;
+    --accent: 0.75 0.12 85;
+    --accent-foreground: 0.14 0.04 55;
+    --destructive: 0.704 0.191 22;
+    --destructive-foreground: 0.14 0 0;
+    --border: 0.28 0.06 260;
+    --input: 0.28 0.06 260;
+    --ring: 0.68 0.14 85;
+
+    --chart-1: 0.68 0.14 85;
+    --chart-2: 0.58 0.14 258;
+    --chart-3: 0.60 0.15 145;
+    --chart-4: 0.65 0.18 25;
+    --chart-5: 0.55 0.13 290;
+
+    --sidebar: 0.14 0.04 260;
+    --sidebar-foreground: 0.93 0.015 240;
+    --sidebar-primary: 0.75 0.12 85;
+    --sidebar-primary-foreground: 0.14 0.04 55;
+    --sidebar-accent: 0.22 0.06 260;
+    --sidebar-accent-foreground: 0.93 0.015 240;
+    --sidebar-border: 0.22 0.06 260;
+    --sidebar-ring: 0.75 0.12 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.12 0.04 265 / 0.95) 0%,
+      oklch(0.18 0.06 258 / 0.85) 50%,
+      oklch(0.14 0.04 260 / 0.92) 100%
+    );
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, oklch(0.75 0.12 85), oklch(0.65 0.14 75));
+  }
+
+  .navy-gradient {
+    background: linear-gradient(135deg, oklch(0.14 0.04 260), oklch(0.22 0.065 258));
+  }
+
+  .card-navy {
+    background: oklch(0.17 0.045 260);
+    border: 1px solid oklch(0.28 0.06 260);
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      oklch(0.22 0.055 260 / 0) 0%,
+      oklch(0.30 0.08 258 / 0.4) 50%,
+      oklch(0.22 0.055 260 / 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .fade-up {
+    animation: fade-up 0.6s ease-out both;
+  }
+
+  .fade-up-delay-1 { animation-delay: 0.1s; }
+  .fade-up-delay-2 { animation-delay: 0.2s; }
+  .fade-up-delay-3 { animation-delay: 0.3s; }
+  .fade-up-delay-4 { animation-delay: 0.4s; }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
